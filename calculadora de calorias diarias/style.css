@@ -1,0 +1,494 @@
+/* DARK MODE */
+
+
+:root{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+    --unselect-color: #c2c2c249;
+    --border-color: #21212134;
+    --nav-color: #212121de;
+}
+
+.dark-theme{
+    --primary-color: #212121;
+    --secondary-color: #edf2fc;
+    --unselect-color: #80808050;
+    --border-color: #edf2fc34;
+    --nav-color: #edf2fcc7;
+}
+
+
+/* TOGGLE BTN */
+
+.toggle-position{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding: 10px;
+    color: var(--primary-color);
+    background-color: var(--nav-color);
+    transition: 0.5s linear;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.726);
+}
+
+.toggle-position img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.switch {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+  
+.switch + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.switch--shadow + label {
+    padding: 2px;
+    width: 60px;
+    height: 30px;
+    background-color: #dddddd;
+    border-radius: 15px;
+}
+
+.switch--shadow + label:before,
+.switch--shadow + label:after {
+    display: block;
+    top: 1px;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    content: '';
+}
+
+.switch--shadow + label:before {
+    right: 1px;
+    background-color: #f1f1f1;
+    border-radius: 60px;
+    transition: all 0.4s;
+}
+.switch--shadow + label:after {
+    width: 29px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+.switch--shadow:checked + label:before {
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
+}
+.switch--shadow:checked + label:after {
+    transform: translateX(29px);
+}
+
+
+/* CONFIGURACOES GERAIS */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    margin: 0; 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--primary-color);
+    margin: 0;
+    color: var(--secondary-color);
+    transition: 0.5s linear, color 0.5s linear;
+}
+
+input[type='tel'] {
+    background-color: var(--primary-color);
+    transition: 0.5s linear, color 0.5s linear;
+}
+
+#container{
+    max-width: 1140px;
+    margin: 0px auto;
+    margin-top: 75px;
+    margin-bottom: 20px;
+}
+
+.label{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    padding: 10px;
+}
+
+h4{
+    margin-right: 10px;
+}
+
+p{
+    font-size: 1.1rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+span{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+::placeholder {
+    opacity: 0.3; 
+}
+
+/* CONFIGURACOES C-CALCULADORA */
+
+#c-flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px auto; 
+    margin-bottom: 10px;
+}
+
+.c-flex-item{
+    width: 50%;
+    padding: 10px;
+}
+
+.c-flex-item:last-child{
+    width: 100%;
+    padding: 10px; 
+}
+
+.border{
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    
+}
+
+.border:hover{
+    border: 1px solid #03a9f4;
+}
+
+.c-layout{
+    text-align: center;
+    padding: 20px;
+}
+
+/* CONFIGURACOES c-sexo */
+
+.c-homem-mulher{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    height: 150px;
+}
+
+input[type='radio'][name='radio-mw']:checked + label {
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
+    color: #edf2fc;
+}
+
+input[type='radio'][name='radio-mw'] { 
+    display:none; 
+}
+
+.style-mw{
+  cursor: pointer;
+  border-radius: 15px;
+  display:inline-block;
+  padding: 10px 13px;
+  background-color: var(--unselect-color);
+  width: 130px;
+  text-align:center;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.img{
+    width: 60px;
+    height: 60px;
+}
+
+.img-ad{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+/* CONFIGURACOES c-idade */
+
+#c-input-idade{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.input-idade{
+    border: unset;
+    outline: unset;
+    border-bottom: 3px #37474f solid;
+    width: 80px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* CONFIGURACOES c-altura */
+
+#c-input-altura{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.input-altura{
+    border: unset;
+    outline: unset;
+    border-bottom: 3px #37474f solid;
+    width: 80px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* CONFIGURACOES c-peso */
+
+#c-input-peso{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.input-peso{
+    border: unset;
+    outline: unset;
+    border-bottom: 3px #37474f solid;
+    width: 80px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* CONFIGURACOES c-atividade-diaria */
+
+#c-options-atividade-diaria{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.options-atividade-diaria{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 25%;
+    margin-top: 10px;
+    align-items: center;
+    
+}
+
+.options-atividade-diaria p {
+    width: 90%;
+    margin-top: 10px;
+}
+
+input[type='radio'][name='radio-ad']:checked + label {
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
+    color: #edf2fc;
+}
+
+input[type='radio'][name='radio-ad'] { 
+    display:none; 
+}
+
+.style-ad{
+    border: 10px;
+    border-radius: 15px;
+    display: inline-block;
+    width: 180px;
+    padding: 12px 15px;
+    text-align: center;
+    background-color: var(--unselect-color);
+    font-weight: 700;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+#btn-calcular{
+    border: none;
+    border-radius: 15px;
+    width: 350px;
+    padding: 13px 18px;
+    text-align: center;
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
+    font-weight: 700;
+    color: #edf2fc;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    transition: all 0.3s ease 0s;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#btn-calcular:hover{
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
+    transform: translateY(-7px);
+    box-shadow: 0px 15px 20px rgba(23, 24, 23, 0.4);
+}
+
+#btn-calcular:active{
+    transform: translateY(-1px);
+    
+}
+
+/* Configuracoes resultado */
+
+.container-resultado{
+    display: none;
+    flex-wrap: wrap;
+    margin: 0px auto; 
+    margin-bottom: 10px;
+}
+
+.flex-item-resultado{
+    width: 33.3337%;
+    padding: 10px;
+}
+
+.flex-item-resultado:first-child{
+    width: 100%;
+    padding: 10px; 
+    text-align: center;
+}
+
+.c-resultado{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 330px;
+}
+
+.c-resultado h3{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.c-resultado p {
+    width: 90%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.is-selected{
+    border: 1px solid #03a9f4;
+    border-radius: 15px;
+}
+
+/* layout responsivo */
+
+@media (max-width: 835px){
+    .options-atividade-diaria{
+        width: 50%;
+    }
+
+    .flex-item-resultado{
+        width: 100%;
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 835px){
+    .options-atividade-diaria{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 700px){
+
+    h1{
+        font-size: 2rem;
+    }
+
+    #c-flex{
+        flex-direction: column;
+    }
+
+    .c-flex-item{
+        width: 100%;
+    }
+
+    .c-homem-mulher{
+        justify-content: space-evenly;
+    }
+
+    #c-options-atividade-diaria{
+        flex-direction: column;
+    }
+
+    .options-atividade-diaria{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .options-atividade-diaria p {
+        width: 250px;
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 410px){
+    #btn-calcular{
+        max-width: 95%;
+        font-size: 1rem;
+    }
+
+    .style-mw{
+        width: 100px;
+    }
+
+   
+
+}
